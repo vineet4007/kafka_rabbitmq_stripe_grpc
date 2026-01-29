@@ -23,7 +23,8 @@ CREATE TABLE IF NOT EXISTS payments (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-  -- prevents double charge per provider
+  -- prevents double charge per providerfeat: add mysql schema for orders and payments
+
   UNIQUE KEY uniq_order_provider (order_id, provider),
 
   INDEX idx_order_id (order_id),
